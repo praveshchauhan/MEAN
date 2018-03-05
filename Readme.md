@@ -1,4 +1,4 @@
-Please follow below steps for hello world from exress js
+Please follow below steps
 ==================================================================
 
 Step 1: install node if not intalled in system.
