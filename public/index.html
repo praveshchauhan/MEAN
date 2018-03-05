@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+
+   	<head>
+      <meta charset="UTF-8">
+      <title>Contact List App</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+   	</head>
+
+  	<body>
+      	<div class="container" data-ng-controller="myCtrl">
+      		<h1>Contact List</h1>
+      		<table class="table">
+      			<thead>
+      				<tr>
+      					<th>Name</th>
+      					<th>Email</th>
+      					<th>Number</th>
+                     <th>Action</th>
+                     <th>&nbsp;</th>
+      				</tr>
+                  <tr>
+                     <td><input type="text" class="form-control" data-ng-model="contact.name" /></td>
+                     <td><input type="text" class="form-control" data-ng-model="contact.email" /></td>
+                     <td><input type="text" class="form-control" data-ng-model="contact.number" /></td>
+                     <td><input type="button" class="btn btn-primary" data-ng-click="addContact()" value="Add Contact" /></td>
+                     <td><input type="button" class="btn btn-info" data-ng-click="update()" value="Update"></td>
+                  </tr>
+      				<tr data-ng-repeat="contact in contactlist">
+      					<td>{{contact.name}}</td>
+      					<td>{{contact.email}}</td>
+      					<td>{{contact.number}}</td>
+                     <td><button class="btn btn-danger" data-ng-click="remove(contact._id)">Remove</button></td>
+                     <td><button class="btn btn-warning" data-ng-click="edit(contact._id)">Edit</button></td>
+      				</tr>                  
+      			</thead>
+      		</table>
+      	</div>
+   	</body>
+
+   	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+   	<script type="text/javascript" src="scripts.js"></script>
+</html>
